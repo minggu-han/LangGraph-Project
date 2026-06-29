@@ -120,3 +120,7 @@ if __name__ == "__main__":
     )
 
     print(f"\n🎉 最终结果: {result['result']}")
+    # 将生成的图片保存到文件
+    graph_png = graph.get_graph().draw_mermaid_png()
+    with open("04_human_in_the_loop.png", "wb") as f:
+        f.write(graph_png)

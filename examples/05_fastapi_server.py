@@ -63,6 +63,10 @@ builder.add_edge(START, "chat")
 builder.add_edge("chat", END)
 
 graph = builder.compile()
+# 将生成的图片保存到文件
+graph_png = graph.get_graph().draw_mermaid_png()
+with open("05_fastapi_server.png", "wb") as f:
+    f.write(graph_png)
 
 
 # ============================================================

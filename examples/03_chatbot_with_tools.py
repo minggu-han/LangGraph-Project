@@ -162,3 +162,8 @@ if __name__ == "__main__":
                     print(f"  [{i}] 🤖 AI: {msg.content}")
             elif isinstance(msg, ToolMessage):
                 print(f"  [{i}] 🔧 Tool({msg.name}): {msg.content}")
+
+        # 将生成的图片保存到文件
+        graph_png = graph.get_graph().draw_mermaid_png()
+        with open("03_chatbot_with_tools.png", "wb") as f:
+            f.write(graph_png)

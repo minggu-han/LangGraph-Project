@@ -103,3 +103,7 @@ if __name__ == "__main__":
         result = graph.invoke({"value": test_value, "path": "", "log": []})
         for line in result["log"]:
             print(f"  {line}")
+        # 将生成的图片保存到文件
+        graph_png = graph.get_graph().draw_mermaid_png()
+        with open("02_conditional_edges.png", "wb") as f:
+            f.write(graph_png)
